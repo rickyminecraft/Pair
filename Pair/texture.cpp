@@ -25,7 +25,7 @@ texture::~texture()
 {
 }
 
-sf::Texture * texture::Get(sf::String Sound_name)
+sf::Texture * texture::Get(const sf::String Sound_name)
 {
 	short Numero = 0;
 	for (auto Name : Fonds_name)
@@ -41,7 +41,7 @@ sf::Texture * texture::Get(sf::String Sound_name)
 	{
 		if (Sound_name == Name)
 		{
-			return &Fonds[Numero];
+			return &Tuiles[Numero];
 		}
 		++Numero;
 	}
@@ -50,7 +50,7 @@ sf::Texture * texture::Get(sf::String Sound_name)
 	{
 		if (Sound_name == Name)
 		{
-			return &Fonds[Numero];
+			return &Divers[Numero];
 		}
 		++Numero;
 	}

@@ -12,7 +12,7 @@ public:
 	~audio();
 
 	//on recupere un pointeur sur un son
-	sf::Sound * Get(sf::String Sound_name);
+	sf::Sound * Get(const sf::String Sound_name);
 
 private:
 	fichier Fichier;

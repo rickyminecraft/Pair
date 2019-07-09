@@ -27,9 +27,10 @@ bool pair::Run()
 	//sf::Text texte;
 	//texte.setString("test");
 	//texte.setFont(font);
+	//texte.setFillColor(sf::Color::Red);
 
-	texture *Texture = new texture();
-
+	//texture *Texture = new texture();
+	//sf::Texture *t = Texture->Get("exit");
 	//sf::Image image1 = test->Get_File<sf::Image>("play.png");
 
 	//sf::VideoMode Resolution;
@@ -47,6 +48,6 @@ bool pair::Run()
 	//delete Window;
 	//delete son;
 	//delete test;
-	delete Texture;
+	//delete Texture;
 	return true;
 }

@@ -19,16 +19,19 @@ fichier::fichier()
 
 fichier::~fichier()
 {
-	delete Buffer_fonte;
+	for (short Boucle = 0; Boucle < Buffer_fonte.size(); ++Boucle)
+	{
+		delete Buffer_fonte[Boucle];
+	}
 	PHYSFS_deinit();
 }
 
-const bool fichier::Has_error() const
+inline const bool fichier::Has_error() const
 {
 	return bError;
 }
 
-const sf::String fichier::Get_error()
+const sf::String fichier::Get_error() const
 {
 	if (stError.size() != 0)
 	{
@@ -68,6 +71,3 @@ bool fichier::File_exist(const sf::String File_name)
 		return false;
 	}
 }
-
-bool fichier::bError = false;
-std::vector<sf::String> fichier::stError;

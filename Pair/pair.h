@@ -3,6 +3,7 @@
 #include "fichier.h"
 #include "audio.h"
 #include "texture.h"
+#include "fonte.h"
 
 class pair
 {
@@ -18,9 +19,9 @@ private:
 	//sound instance
 	std::unique_ptr <audio>  Son;
 	//texture instance
-	//std::unique_ptr <textures>  Texture;
+	std::unique_ptr <texture>  Texture;
 	//fonte instance
-	//std::unique_ptr <fonte>  Fonte;
+	std::unique_ptr <fonte>  Fonte;
 	//files instance
 	std::unique_ptr <fichier>  Fichier;
 	//renderer instance

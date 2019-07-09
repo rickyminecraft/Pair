@@ -11,7 +11,7 @@ public:
 	texture();
 	~texture();
 
-	sf::Texture * Get(sf::String Sound_name);
+	sf::Texture * Get(const sf::String Sound_name);
 
 private:
 	fichier Fichier;

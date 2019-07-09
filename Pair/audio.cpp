@@ -21,7 +21,7 @@ audio::~audio()
 {
 }
 
-sf::Sound * audio::Get(sf::String Sound_name)
+sf::Sound * audio::Get(const sf::String Sound_name)
 {
 	short Numero = 0;
 	for (auto Nom : Audio_name)
