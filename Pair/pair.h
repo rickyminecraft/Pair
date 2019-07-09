@@ -1,9 +1,11 @@
 #pragma once
 
+#include <chrono>
+
 #include "fichier.h"
-#include "audio.h"
-#include "texture.h"
-#include "fonte.h"
+#include "rendu.h"
+#include "bouton.h"
+#include "window.h"
 
 class pair
 {
@@ -15,16 +17,22 @@ public:
 	bool Run();
 
 private:
+	void Ready_game();
 
-	//sound instance
-	std::unique_ptr <audio>  Son;
-	//texture instance
-	std::unique_ptr <texture>  Texture;
-	//fonte instance
-	std::unique_ptr <fonte>  Fonte;
 	//files instance
-	std::unique_ptr <fichier>  Fichier;
+	std::unique_ptr <fichier> Fichiers;
+	//files instance
+	std::unique_ptr <window> Windows;
+	//files instance
+	std::unique_ptr <bouton> Boutons;
 	//renderer instance
-	//std::unique_ptr <renderer> Renderer;
+	std::unique_ptr <rendu> Renderers;
+
+	std::chrono::steady_clock Horloge;
+	std::chrono::steady_clock::time_point Time;
+
+	//resolution
+	const float Width = 1024.0f, Height = 768.0f;
+	const sf::String Window_name = "Paires";
 };
 

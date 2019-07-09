@@ -4,11 +4,12 @@
 
 pair::pair()
 {
-	Fichier = std::make_unique<fichier>();
-	Son = std::make_unique<audio>();
-	//Texture = std::make_unique<textures>(Files.get());
-	//Fonte = std::make_unique<fonte>(Files.get());
-	//Renderer = std::make_unique<renderer>(Windows.get(), Texture.get(), Fonte.get());
+	Fichiers = std::make_unique<fichier>();
+	Windows = std::make_unique<window>();
+	Boutons = std::make_unique<bouton>();
+	Renderers = std::make_unique<rendu>();
+
+	Ready_game();
 }
 
 
@@ -20,34 +21,25 @@ bool pair::Run()
 {
 	sf::Event event;
 
-	fichier *test = new fichier();
-	//audio *son = new audio();
+	while (Windows->isOpen(Window_name))
+	{
+		auto Actual_time = Horloge.now();
+		if (Actual_time - Time >= std::chrono::microseconds(80000))//11111 = 90 ips 20000 = 50 ips 10000 = 100 ips
+		{
 
-	//sf::Font font = test->Get_File<sf::Font>("arial.ttf");
-	//sf::Text texte;
-	//texte.setString("test");
-	//texte.setFont(font);
-	//texte.setFillColor(sf::Color::Red);
 
-	//texture *Texture = new texture();
-	//sf::Texture *t = Texture->Get("exit");
-	//sf::Image image1 = test->Get_File<sf::Image>("play.png");
 
-	//sf::VideoMode Resolution;
-	//sf::RenderWindow * Window;
-
-	//Resolution = sf::VideoMode(1024, 768);
-	//Window = new sf::RenderWindow(Resolution, "test", sf::Style::Close);
-	//while (1)
-	//{
-	//	Window->clear();
-	//	Window->draw(texte);
-	//	Window->display();
-	//}
-
-	//delete Window;
-	//delete son;
-	//delete test;
-	//delete Texture;
+		}
+		//Renderers->Affiche(Windows->GetWindow(Window_name));
+	}
+	
 	return true;
+}
+
+void pair::Ready_game()
+{
+	Windows->CreateWindow(Width, Height, Window_name);
+
+
+
 }

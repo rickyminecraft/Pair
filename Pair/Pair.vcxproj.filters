@@ -45,11 +45,14 @@
     <ClInclude Include="tuile.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="texte.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="bouton.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
     <ClCompile Include="audio.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -75,6 +78,15 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="tuile.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="texte.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="bouton.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

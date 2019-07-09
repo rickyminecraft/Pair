@@ -4,12 +4,12 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "window.h"
 #include "audio.h"
 #include "texture.h"
-#include "fonte.h"
+#include "texte.h"
+#include "pixel.h"
 
-class rendu: private window
+class rendu
 {
 public:
 	rendu();
@@ -18,22 +18,21 @@ public:
 	void Playsound(const sf::String Name);
 	void Playmusic(const sf::String Name);
 
-	void Showtry(short Nombre);
-	void ShowScore(short Score);
+	void Showtry(const short Nombre);
+	void ShowScore(const short Score);
 
-	void Drawfond();
-	void Drawtuiles();
-	void Drawmaintuiles();
-
-	void Affiche();
+	//une tuile peut être n'import quoi, bouton, fond, tuile du jeu, ...
+	void Drawtuile(sf::RectangleShape Tuile, short Layer);
+	//rend tout sur la fenetre fournit
+	void Affiche(sf::RenderWindow * Window);
 
 private:
 	bool Score = false, Try = false;
 
-
-	sf::RenderWindow * Window;
-
 	std::vector<sf::RectangleShape> Tuiles;
+
+	//vector of particules
+	//std::vector< Pixel> Pixels;
 
 	std::chrono::steady_clock Horloge;
 	std::chrono::steady_clock::time_point Time;

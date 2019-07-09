@@ -55,7 +55,7 @@ void window::Close(const sf::String Nom) const
 	}
 }
 
-const sf::RenderWindow * window::GetWindow(const sf::String Nom) const
+sf::RenderWindow * window::GetWindow(const sf::String Nom) const
 {
 	for (auto Name : Windows)
 	{

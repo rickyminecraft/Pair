@@ -6,7 +6,7 @@ pixel::pixel()
 {
 }
 
-pixel::pixel(sf::Vector2f Position, sf::Color Couleur)
+pixel::pixel(const sf::Vector2f Position, const sf::Color Couleur)
 {
 	vPixel.color = Couleur;
 	vPixel.position = Position;

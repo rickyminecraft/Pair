@@ -6,8 +6,13 @@ class tuile
 {
 public:
 	tuile();
-	explicit tuile(sf::Vector2f Position, sf::Vector2f Taille);
 	~tuile();
+
+	void Setposition(const sf::Vector2f Position);
+	void SetSize(const sf::Vector2f Size);
+	void SetTexture(const sf::Texture * Texture);
+
+	const sf::RectangleShape GetTuile() const;
 
 private:
 

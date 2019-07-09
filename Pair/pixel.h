@@ -8,7 +8,7 @@ class pixel
 {
 public:
 	pixel();
-	explicit pixel(sf::Vector2f Position, sf::Color Couleur);
+	explicit pixel(const sf::Vector2f Position, const sf::Color Couleur);
 	~pixel();
 
 	const bool Alive() const;
