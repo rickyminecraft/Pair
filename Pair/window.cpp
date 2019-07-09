@@ -15,7 +15,7 @@ window::~window()
 	}
 }
 
-void window::CreateWindow(const int size_x, const int size_y, const sf::String Nom, const short Style, bool rebuild)
+void window::CreateWindow(const int size_x, const int size_y, const sf::String Nom, const short Style, const bool rebuild)
 {
 	if (rebuild)
 	{
@@ -32,7 +32,7 @@ void window::CreateWindow(const int size_x, const int size_y, const sf::String N
 	Windows.push_back(std::make_pair(Window, Nom));
 }
 
-const bool window::isOpen(const sf::String Nom)
+const bool window::isOpen(const sf::String Nom) const
 {
 	for (auto Name : Windows)
 	{
@@ -44,7 +44,7 @@ const bool window::isOpen(const sf::String Nom)
 	return false;
 }
 
-void window::Close(const sf::String Nom)
+void window::Close(const sf::String Nom) const
 {
 	for (auto Name : Windows)
 	{
@@ -55,7 +55,7 @@ void window::Close(const sf::String Nom)
 	}
 }
 
-sf::RenderWindow * window::GetWindow(const sf::String Nom)
+const sf::RenderWindow * window::GetWindow(const sf::String Nom) const
 {
 	for (auto Name : Windows)
 	{
