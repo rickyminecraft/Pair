@@ -6,6 +6,7 @@
 
 #include "assets.h"
 #include "Gamestatut.h"
+#include "Tuile_array.h"
 #include "fichier.h"
 #include "rendu.h"
 #include "bouton.h"
@@ -29,6 +30,7 @@ private:
 	void Play_window_logic();
 
 	void Ready_game();
+	void Ready_tuiles_array();
 
 	//fichier instance
 	std::unique_ptr <fichier> Fichiers;
@@ -41,9 +43,10 @@ private:
 	std::chrono::steady_clock::time_point Time;
 
 	std::vector<bouton> Bouton;
+	Tuile_array Tuiles_array;
 
 	//resolution
-	const float Width = 1024.0f, Height = 768.0f;
+	const int Width = 1024, Height = 768;
 	const sf::String Window_name = "Paires";
 
 	sf::Vector2f Mouseposition;

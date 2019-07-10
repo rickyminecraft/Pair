@@ -148,7 +148,7 @@ void pair::Ready_game()
 	bouton Nouveau;
 	//on met le fond
 	Nouveau.Setposition(sf::Vector2f(0.0f, 0.0f));
-	Nouveau.Setsize(sf::Vector2f(Width, Height));
+	Nouveau.Setsize(sf::Vector2f((float)Width, (float)Height));
 	Bouton.push_back(Nouveau);
 	//puis toutes les textures de base
 	Nouveau.Setname(Divers_name[0]);//selection
@@ -179,5 +179,15 @@ void pair::Ready_game()
 		}
 	}
 
+	Ready_tuiles_array();
 	Set(Game_Status::Main_window);
+}
+
+void pair::Ready_tuiles_array()
+{
+	Tuiles_array.Reset();
+	for (short Boucle = 0; Boucle < 48; ++Boucle)
+	{
+		Bouton[Boucle + 5].Setname(Tuiles_name[Tuiles_array.Get(Boucle)]);
+	}
 }
