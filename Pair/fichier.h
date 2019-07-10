@@ -49,7 +49,7 @@ public:
 			if (Extension != "ttf")
 			{
 
-				delete Buffer;
+				delete[] Buffer;
 			}
 		}
 		return file_type;

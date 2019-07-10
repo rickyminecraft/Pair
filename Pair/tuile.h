@@ -9,14 +9,14 @@ public:
 	~tuile();
 
 	void Setposition(const sf::Vector2f Position);
-	void SetSize(const sf::Vector2f Size);
-	void SetTexture(const sf::Texture * Texture);
+	void Setsize(const sf::Vector2f Size);
+	void Setname(sf::String Name);
 
-	const sf::RectangleShape GetTuile() const;
+	const std::pair<sf::RectangleShape, sf::String> * GetTuile() const;
 
 private:
 
-	sf::RectangleShape Tuile;
+	std::pair<sf::RectangleShape, sf::String> Tuile;
 
 };
 

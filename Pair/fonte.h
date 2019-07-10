@@ -11,7 +11,7 @@ public:
 	fonte();
 	~fonte();
 
-	sf::Font * Get(const sf::String Sound_name);
+	sf::Font * Get(const sf::String Fonte_name);
 
 private:
 	fichier Fichier;

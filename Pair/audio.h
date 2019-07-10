@@ -1,5 +1,7 @@
 #pragma once
 
+#include <algorithm>
+
 #include <SFML/Audio.hpp>
 
 #include "fichier.h"

@@ -22,14 +22,15 @@ public:
 	void ShowScore(const short Score);
 
 	//une tuile peut être n'import quoi, bouton, fond, tuile du jeu, ...
-	void Drawtuile(sf::RectangleShape Tuile, short Layer);
+	void Drawtuile(std::pair<sf::RectangleShape, sf::String> Tuile, short Layer);
 	//rend tout sur la fenetre fournit
 	void Affiche(sf::RenderWindow * Window);
 
 private:
 	bool Score = false, Try = false;
 
-	std::vector<sf::RectangleShape> Tuiles;
+	std::vector<std::pair<sf::RectangleShape, sf::String>> Tuiles;
+	std::vector<short> Layers;
 
 	//vector of particules
 	//std::vector< Pixel> Pixels;

@@ -131,6 +131,8 @@
     <ClInclude Include="bouton.h" />
     <ClInclude Include="fichier.h" />
     <ClInclude Include="fonte.h" />
+    <ClInclude Include="Gamestatut.h" />
+    <ClInclude Include="Game_stats.h" />
     <ClInclude Include="pair.h" />
     <ClInclude Include="pixel.h" />
     <ClInclude Include="rendu.h" />
@@ -144,6 +146,7 @@
     <ClCompile Include="bouton.cpp" />
     <ClCompile Include="fichier.cpp" />
     <ClCompile Include="fonte.cpp" />
+    <ClCompile Include="Gamestatut.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pair.cpp" />
     <ClCompile Include="pixel.cpp" />

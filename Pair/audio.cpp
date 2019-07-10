@@ -4,10 +4,14 @@
 
 audio::audio()
 {
-	for (auto Nom : Audio_name)
+	std::transform(Audio_name->begin(), Audio_name->end(), Audio_name->begin(), [&](const auto& Nom)
 	{
 		Buffers.push_back(Fichier.Get_File<sf::SoundBuffer>(Nom + ".ogg"));
-	}
+	});
+	/*for (auto Nom : Audio_name)
+	{
+		Buffers.push_back(Fichier.Get_File<sf::SoundBuffer>(Nom + ".ogg"));
+	}*/
 
 	for (auto Boucle : { 0,1,2,3 })
 	{

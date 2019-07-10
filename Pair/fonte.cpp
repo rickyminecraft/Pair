@@ -15,12 +15,12 @@ fonte::~fonte()
 {
 }
 
-sf::Font * fonte::Get(const sf::String Sound_name)
+sf::Font * fonte::Get(const sf::String Fonte_name)
 {
 	short Numero = 0;
 	for (auto Name : Fonds_name)
 	{
-		if (Sound_name == Name)
+		if (Fonte_name == Name)
 		{
 			return &Fontes[Numero];
 		}

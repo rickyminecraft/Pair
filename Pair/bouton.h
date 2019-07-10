@@ -8,7 +8,13 @@ public:
 	bouton();
 	~bouton();
 
-private:
+	void Select();
+	void Deselect();
 
+	const bool Is_inside(const sf::Vector2f Position) const;
+	const bool Is_select() const;
+
+private:
+	bool bSelection = false;
 };
 
