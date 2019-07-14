@@ -19,5 +19,6 @@ private:
 	std::vector<sf::Texture> Tuiles;
 	std::vector<sf::Texture> Fonds;
 	std::vector<sf::Texture> Divers;
+	sf::Texture Hover;
 };
 

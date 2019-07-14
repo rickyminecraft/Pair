@@ -4,10 +4,7 @@
 
 fonte::fonte()
 {
-	for (auto Nom : Fonte_name)
-	{
-		Fontes.push_back(Fichier.Get_File<sf::Font>(Nom + ".ttf"));
-	}
+	Fontes.push_back(Fichier.Get_File<sf::Font>(Fonte_name + ".ttf"));
 }
 
 

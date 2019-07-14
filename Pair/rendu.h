@@ -8,28 +8,29 @@
 #include "texture.h"
 #include "texte.h"
 #include "pixel.h"
+#include "bouton.h"
 
-class rendu
+class rendu: private texture, private texte, private audio
 {
 public:
 	rendu();
 	~rendu();
 
 	void Playsound(const sf::String Name);
-	void Playmusic(const sf::String Name);
-
-	void Showtry(const short Nombre);
-	void ShowScore(const short Score);
+	void Playmusic(const sf::String Name, bool Mute = false);
 
 	//une tuile peut être n'import quoi, bouton, fond, tuile du jeu, ...
-	void Drawtuile(std::pair<sf::RectangleShape, sf::String> Tuile, short Layer);
+	void Drawtuile(bouton * Tuile, short Layer = 0);
 	//rend tout sur la fenetre fournit
 	void Affiche(sf::RenderWindow * Window);
 
 private:
+	void Showtry(const short Nombre);
+	void ShowScore(const short Score);
+
 	bool Score = false, Try = false;
 
-	std::vector<std::pair<sf::RectangleShape, sf::String>> Tuiles;
+	std::vector<bouton> Tuiles;
 	std::vector<short> Layers;
 
 	//vector of particules

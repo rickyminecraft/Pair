@@ -1,6 +1,6 @@
 #include "bouton.h"
 
-
+short bouton::IDcourant = 0;
 
 bouton::bouton()
 {
@@ -38,4 +38,15 @@ const bool bouton::Is_inside(const sf::Vector2f Position) const
 const bool bouton::Is_select() const
 {
 	return bSelection;
+}
+
+const short bouton::GetID() const
+{
+	return ID;
+}
+
+void bouton::SetID()
+{
+	ID = IDcourant;
+	++IDcourant;
 }

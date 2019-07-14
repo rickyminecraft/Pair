@@ -18,6 +18,11 @@ texture::texture()
 	{
 		Divers.push_back(Fichier.Get_File<sf::Texture>(Nom + ".png"));
 	}
+	Hover.create(100, 100);
+	sf::Image * Hover_image = new sf::Image();
+	Hover_image->create(100, 100, sf::Color::Red);
+	Hover.loadFromImage(*Hover_image);
+	delete Hover_image;
 }
 
 
@@ -53,6 +58,10 @@ sf::Texture * texture::Get(const sf::String Texture_name)
 			return &Divers[Numero];
 		}
 		++Numero;
+	}
+	if (Texture_name == Hover_name)
+	{
+		return &Hover;
 	}
 	return nullptr;
 }
