@@ -17,10 +17,14 @@ public:
 	~rendu();
 
 	void Playsound(const sf::String Name);
-	void Playmusic(const sf::String Name, bool Mute = false);
+	void Playmusic(const sf::String Name, const bool Mute = false);
+
+	void Drawselection() const;
+	void Hideselection() const;
+	void reset();
 
 	//une tuile peut être n'import quoi, bouton, fond, tuile du jeu, ...
-	void Drawtuile(bouton * Tuile, short Layer = 0);
+	void Addtuile(bouton * Tuile, const short Layer = 0);
 	//rend tout sur la fenetre fournit
 	void Affiche(sf::RenderWindow * Window);
 
@@ -30,7 +34,7 @@ private:
 
 	bool Score = false, Try = false;
 
-	std::vector<bouton> Tuiles;
+	std::vector<bouton*> Tuiles;
 	std::vector<short> Layers;
 
 	//vector of particules

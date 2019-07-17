@@ -10,7 +10,7 @@ public:
 
 	void Setposition(const sf::Vector2f Position);
 	void Setsize(const sf::Vector2f Size);
-	void Setname(sf::String Name);
+	void Setname(const sf::String Name);
 
 	const std::pair<sf::RectangleShape, sf::String> * GetTuile() const;
 

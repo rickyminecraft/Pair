@@ -18,6 +18,7 @@ texture::texture()
 	{
 		Divers.push_back(Fichier.Get_File<sf::Texture>(Nom + ".png"));
 	}
+
 	Hover.create(100, 100);
 	sf::Image * Hover_image = new sf::Image();
 	Hover_image->create(100, 100, sf::Color::Red);

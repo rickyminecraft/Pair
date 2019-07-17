@@ -12,16 +12,9 @@ rendu::~rendu()
 {
 }
 
-void rendu::Drawtuile(bouton * Tuile, short Layer)
+void rendu::Addtuile(bouton * Tuile, short Layer)
 {
-	for (auto test : Tuiles)
-	{
-		if (test.GetID() == Tuile->GetID())
-		{
-			return;
-		}
-	}
-	Tuiles.push_back(*Tuile);
+	Tuiles.push_back(Tuile);
 	Layers.push_back(Layer);
 }
 
@@ -34,25 +27,24 @@ void rendu::Affiche(sf::RenderWindow * Window)
 		{
 			Window->clear();
 
-			short Actual_layer = 0, Vectorposition = 0;
-			while (Tuiles.size() > 0)
+			if (Tuiles.size() > 0)
 			{
-				if (Vectorposition >= Tuiles.size())
+				for (short Layer = 0; Layer < 4; Layer++)
 				{
-					Vectorposition = 0;
-					++Actual_layer;
+					for (short Vectorposition = 0; Vectorposition < Tuiles.size(); ++Vectorposition)
+					{
+						if (Layers[Vectorposition] == Layer)
+						{
+							std::pair<sf::RectangleShape, sf::String> Sprite;
+							Sprite = *Tuiles[Vectorposition]->GetTuile();
+							Sprite.first.setTexture(texture::Get(Sprite.second));
+							Window->draw(Sprite.first);
+							//Tuiles.erase(Tuiles.cbegin() + Vectorposition);
+							//Layers.erase(Layers.cbegin() + Vectorposition);
+						}
+					}
+					
 				}
-				if (Layers[Vectorposition] == Actual_layer)
-				{
-					std::pair<sf::RectangleShape, sf::String> Sprite;
-					Sprite = *Tuiles[Vectorposition].GetTuile();
-					Sprite.first.setTexture(texture::Get(Sprite.second));
-					Window->draw(Sprite.first);
-					Tuiles.erase(Tuiles.cbegin() + Vectorposition);
-					Layers.erase(Layers.cbegin() + Vectorposition);
-				}
-
-				++Vectorposition;
 			}
 
 			Window->display();

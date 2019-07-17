@@ -8,20 +8,17 @@ public:
 	bouton();
 	~bouton();
 
-	void Select();
-	void Deselect();
+	void Hover(void Function());
+	void Click(void Function());
 
-	const bool Is_inside(const sf::Vector2f Position) const;
-	const bool Is_select() const;
-
-	const short GetID() const;
-	void SetID();
+	void Update(sf::Event Event);
 
 private:
-	
-	bool bSelection = false;
+	const bool Ishover() const;
 
-	static short IDcourant;
-	short ID = -1;
+	sf::Vector2f Mouseposition;
+
+	void (*Hoverfunction)();
+	void (*Clickfunction)();
 };
 

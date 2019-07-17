@@ -26,23 +26,25 @@ private:
 	void Send_tiles();
 	void Send_main_tiles();
 
-	void Main_window_logic();
-	void Play_window_logic();
-
 	void Ready_game();
 	void Ready_tuiles_array();
+
+	static void Exitclick();
+	static void Playclick();
+	static void ExitHover();
+	static void Playhover();
 
 	//fichier instance
 	std::unique_ptr <fichier> Fichiers;
 	//window instance
 	std::unique_ptr <window> Windows;
 	//rendu instance
-	std::unique_ptr <rendu> Renderers;
+	static std::unique_ptr <rendu> Renderers;
 
 	std::chrono::steady_clock Horloge;
 	std::chrono::steady_clock::time_point Time;
 
-	std::vector<bouton> Bouton;
+	static std::vector<bouton> Bouton;
 	Tuile_array Tuiles_array;
 
 	//resolution
@@ -52,4 +54,3 @@ private:
 	sf::Vector2f Mouseposition;
 	sf::Keyboard::Key Touche;
 };
-

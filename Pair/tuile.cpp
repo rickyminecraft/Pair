@@ -21,7 +21,7 @@ void tuile::Setsize(const sf::Vector2f Size)
 	Tuile.first.setSize(Size);
 }
 
-void tuile::Setname(sf::String Name)
+void tuile::Setname(const sf::String Name)
 {
 	Tuile.second = Name;
 }

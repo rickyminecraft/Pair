@@ -10,12 +10,13 @@ public:
 	Gamestatut();
 	~Gamestatut();
 
-	void Set(const Game_Status Name);
+	static void Set(const Game_Status Name);
+	static void Unset(const Game_Status Name);
 
 	const bool Statut(const Game_Status Name) const;
 
 private:
 
-	std::bitset<10> Stats = 0x0;
+	static std::bitset<10> Stats;
 };
 
